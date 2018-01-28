@@ -1,0 +1,49 @@
+URxvt.depth: 32
+URxvt.background: [90]#222
+
+
+!Shift-Control C or V for copying and pasting
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.font: xft:input:size=10
+URxvt.scrollBar: False
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
+! black
+*color0:  #4d4d4d
+*color8:  #5a5a5a
+! red
+*color1:  #C70031
+*color9:  #F05178
+! green
+*color2:  #29CF13
+*color10: #6CE05C
+! yellow
+*color3:  #D8E30E
+*color11: #F3F79E
+! blue
+*color4:  #3449D1
+*color12: #97A4F7
+! magenta
+*color5:  #8400FF
+*color13: #C495F0
+! cyan
+*color6:  #0798AB
+*color14: #68F2E0
+! white
+*color7:  #E2D1E3
+*color15: #FFFFFF
+
+*.foreground: #FFF
+!*.background: #222
+*.cursorColour: #FFF
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.terminal: urxvt
+rofi.sidebar-mode:true
+rofi.theme:sidebar.rasi

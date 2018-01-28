@@ -1,0 +1,1 @@
+curl -m 10 -s https://blockchain.info/ticker | jq -r ".USD.last"
