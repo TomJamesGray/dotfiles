@@ -1,2 +1,2 @@
 # Dotfiles
-My Dotfiles and some miscelaneous scripts
+My Dotfiles and some miscellaneous scripts
