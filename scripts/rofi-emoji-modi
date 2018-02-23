@@ -4,7 +4,7 @@
 if [ -n "$1" ]
 then
   # Arguments have been passed so copy the value
-  echo -n "${1:0:1}" | xsel -i -b
+  echo -n "${1}" | cut -d " " -f1 | xsel -i -b
 else
   # Generate list
   cat ~/.cache/emojis.txt | grep -v '#' | grep -v '^[[:space:]]*$'

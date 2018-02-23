@@ -1,0 +1,70 @@
+* {
+  text-color:#ccd2be;
+  font: "SF Pro Display 11";
+  fc-color:#607d8b;
+  bg-color:#34515e;
+}
+
+#window{
+  border:0;
+  transparency:"real";
+  background-color:@bg-color;
+  spacing:0;
+  height:100%;
+}
+
+#mainbox{
+  background-color:@bg-color;
+  spacing:1em;
+  padding:0;
+  border:0;
+}
+
+#inputbar {
+  padding:1.4em 2em 0 2em;
+  spacing:0.2em;
+  border:0;
+  background-color:@bg-color;
+}
+
+/* Displays mode in input bar */
+#prompt {
+  font:"SF Pro Display Bold 11";
+  background-color:@bg-color;
+  width:24em;
+  padding: 0 0.5em 0 0;
+}
+
+#entry {
+  background-color:@bg-color;
+}
+
+#listview {
+  background-color:@bg-color;
+  spacing:0;
+}
+
+#element {
+  padding: 0.7em 2em 0.7em 2em;
+  background-color:@bg-color;
+}
+
+#element.selected {
+  background-color:@fc-color;
+}
+
+#sidebar {
+  border:0;
+  background-color:@bg-color;
+}
+
+#button {
+  background-color:@bg-color;
+  border:0;
+  spacing:0;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+#button selected {
+  background-color:@fc-color;
+}

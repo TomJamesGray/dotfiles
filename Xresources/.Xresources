@@ -46,4 +46,6 @@ URxvt.keysym.C-S-Down: perl:font-size:decglobal
 ! ------------------------------------------------------------------------------
 rofi.terminal: urxvt
 rofi.sidebar-mode:true
-rofi.theme:sidebar.rasi
+rofi.theme:blue_sidebar.rasi
+rofi.location:1
+rofi.monitor:HDMI-0
