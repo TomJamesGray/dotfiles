@@ -1,0 +1,32 @@
+#!/bin/bash
+json_dat=`curl -m 10 -s https://min-api.cryptocompare.com/data/pricemulti\?fsyms\=${1}\&tsyms\=${2}`
+
+
+readarray -d ',' -t cryptos <<< "$1"
+readarray -d ',' -t fiats <<< "$2"
+
+
+for crypto in "${cryptos[@]}"
+do
+	for fiat in "${fiats[@]}"
+	do
+		printf $crypto 
+		printf " "
+		fiat=$(echo $fiat | tr -d '\n')
+		case $fiat in
+			"GBP")
+			printf "£";;
+			"USD")
+			printf "$";;
+			"EUR")
+			printf "€";;
+			*)
+			printf "$fiat";;
+		esac
+		
+		printf `echo $json_dat | jq -r ".${crypto}.${fiat}"`
+		printf "  "
+	done
+
+done
+printf "\n"
