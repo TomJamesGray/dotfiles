@@ -1,11 +1,11 @@
-URxvt.depth: 32
-URxvt.background: [90]#222
+!URxvt.depth: 32
+URxvt.background: #222
 
 
 !Shift-Control C or V for copying and pasting
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
-URxvt.font: xft:input:size=10
+URxvt.font: xft:Hack:size=10
 URxvt.scrollBar: False
 URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:   perl:font-size:decrease
@@ -48,4 +48,3 @@ rofi.terminal: urxvt
 rofi.sidebar-mode:true
 rofi.theme:blue_sidebar.rasi
 rofi.location:1
-rofi.monitor:HDMI-0
