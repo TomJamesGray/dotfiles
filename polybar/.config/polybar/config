@@ -1,5 +1,5 @@
 [bar/mybar]
-modules-right = crypto network arch_update pulseaudio battery date
+modules-right = crypto cpu network vpn arch_update pulseaudio battery date
 modules-center = cur_song
 modules-left = i3
 
@@ -9,11 +9,12 @@ height = 20
 background = #1E1E1E
 foreground = #F4F4F4
 fixed-center = true
-font-0 = Sf Pro Display:pixelsize=10;1
-font-1 = FontAwesome5Free:style=Solid:size=12;1
-font-2 = FontAwesome5Free:style=Regular:size=12;1
-font-3 = FontAwesome5Brands:style=Regular:size=12;1
-font-4 = Free Serif:pixelsize=10;1
+font-0 = Sf Pro Display:pixelsize=10;2
+font-1 = FontAwesome5Free:style=Solid:size=12;3
+font-2 = FontAwesome5Free:style=Regular:size=12;3
+font-3 = FontAwesome5Brands:style=Regular:size=12;3
+font-4 = Free Serif:pixelsize=10;2
+font-5 = FontAwesome5Free:style=Solid:size=10;1
 module-margin = 2 2
 enable-ipc = true
 
@@ -34,8 +35,26 @@ interval = 1800
 
 [module/arch_update]
 type = custom/script
-exec = /usr/local/bin/arch-update.py
+; Have a script arch-update.py writing to this file every 30 mins
+; Must do it like this otherwise with multiple bars running get issues with
+; pacman locks
+exec = cat /home/tom/.arch_updates
 interval = 3600
+
+[module/cpu]
+type = internal/cpu
+format = <ramp-coreload>
+label = CPU
+ramp-coreload-spacing = 0 
+
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
 
 [module/battery]
 type = internal/battery
@@ -73,6 +92,12 @@ animation-discharging-4 = 
 ; Framerate in milliseconds
 animation-discharging-framerate = 1000
 
+[module/vpn]
+type = custom/script
+exec = ~/dotfiles/scripts/isrunning.sh
+label-font = 6
+interval = 2
+
 [module/pulseaudio]
 type = internal/pulseaudio
                    
@@ -93,9 +118,11 @@ label-connected = %local_ip%
 type=internal/i3
 pin-workspaces = true
 wrapping-scroll = false
-label-focused-padding = 5 5
-label-unfocused-padding = 5 5
-label-visible-padding = 5 5
+label-urgent-padding = 5
+label-unfocused-padding = 5
+label-visible-padding = 5
+label-focused-padding = 5
 
 label-focused-background = #20B3AB
 label-visible-background = #157872
+label-urgent-background = #CD3599
