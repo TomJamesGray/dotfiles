@@ -293,3 +293,6 @@ exec_always /home/tom/.config/i3/quiet-toggle-bar.py
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always /usr/local/bin/arch-update.py > ~/.arch_updates
 bindsym XF86Favorites exec polybar-msg cmd toggle
+
+# Start redshift
+exec --no-startup-id redshift
