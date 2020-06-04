@@ -1,6 +1,9 @@
 #!/bin/bash
 json_dat=`curl -m 10 -s https://min-api.cryptocompare.com/data/pricemulti\?fsyms\=${1}\&tsyms\=${2}`
 
+if [ -z $json_dat ]; then
+	exit 1
+fi
 
 readarray -d ',' -t cryptos <<< "$1"
 readarray -d ',' -t fiats <<< "$2"
@@ -10,7 +13,16 @@ for crypto in "${cryptos[@]}"
 do
 	for fiat in "${fiats[@]}"
 	do
-		printf $crypto 
+		crypto=$(echo $crypto | tr -d '\n')
+		# Uses symbols from font awesome brand font
+		case $crypto in
+			"XMR")
+			printf "";;
+			"BTC")
+			printf "";;
+			*)
+			printf "$crypto";;
+		esac
 		printf " "
 		fiat=$(echo $fiat | tr -d '\n')
 		case $fiat in
