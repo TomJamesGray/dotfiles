@@ -1,5 +1,6 @@
 cd ~/screenshots
 date=$(date "+%H_%M_%S_%d_%m_%y")
+date=$(date "+%y_%m_%d_%H_%M_%S")
 scrot $@ "${date}.png"
 xclip -selection clipboard -t image/png -i "${date}.png"
 notify-send "Screenshot" "Screenshot taken ${date}.png\nCopied to clipboard"
