@@ -126,16 +126,16 @@ client.unfocused				$black			$black				$gray		$black
 client.focused_inactive	$black			$black				$gray		$black
 client.urgent						$black			$red					$white	$red
 #Define workspaces
-set $workspace1 "1 "
+set $workspace1 "1"
 #set $workspace2 "2  "
 set $workspace2 "2"
 set $workspace3 "3"
 set $workspace4 "4"
 set $workspace5 "5"
 set $workspace6 "6"
-set $workspace7 "7 "
-set $workspace8 "8 "
-set $workspace9 "9 " 
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9" 
 set $workspace10 "10"
 set $workspaceVM "VM"
 set $workspaceMusic "♪"
@@ -173,22 +173,22 @@ bindsym $mod+Shift+Ctrl+3 move container to workspace $workspaceEmail
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-      workspace_buttons yes
-      i3bar_command i3bar -t
-      status_command i3blocks -c ~/.config/i3/i3blocks.conf
-      tray_output none
-      position bottom
-      separator_symbol " "
+#bar {
+#      workspace_buttons yes
+#      i3bar_command i3bar -t
+#      status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#      tray_output none
+#      position bottom
+#      separator_symbol " "
       #height 20
-      colors{
-        background $transparent
+#      colors{
+#        background $transparent
         #                   border          background     text
-        focused_workspace		$transparent		$blue			     $gray		
-        inactive_workspace	$transparent		$transparent	 $gray
-        urgent_workspace		$transparent		$red			 	   $gray
-      }
-}
+#        focused_workspace		$transparent		$blue			     $gray		
+#        inactive_workspace	$transparent		$transparent	 $gray
+#        urgent_workspace		$transparent		$red			 	   $gray
+#      }
+#}
 
 #Lock
 bindsym Shift+Ctrl+l exec betterlockscreen -l
@@ -288,3 +288,6 @@ workspace_auto_back_and_forth yes
 bindsym $mod+q exec /home/tom/.config/i3/quiet-cmd.py
 bindsym $mod+Ctrl+q exec /home/tom/.config/i3/quiet-cmd.py toggle
 exec_always /home/tom/.config/i3/quiet-toggle-bar.py
+
+#Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

@@ -1,0 +1,101 @@
+[bar/mybar]
+modules-right = crypto network arch_update pulseaudio battery date
+modules-center = cur_song
+modules-left = i3
+
+monitor = ${env:MONITOR}
+bottom = true
+height = 20
+background = #1E1E1E
+foreground = #F4F4F4
+fixed-center = true
+font-0 = Sf Pro Display:pixelsize=10;1
+font-1 = FontAwesome5Free:style=Solid:size=12;1
+font-2 = FontAwesome5Free:style=Regular:size=12;1
+font-3 = FontAwesome5Brands:style=Regular:size=12;1
+font-4 = Free Serif:pixelsize=10;1
+module-margin = 2 2
+enable-ipc = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+[module/date]
+type = internal/date
+date = %a %d %b %Y %H:%M
+
+[module/cur_song]
+type = custom/script
+exec = cur_song_spotify
+
+[module/crypto]
+type = custom/script
+exec = crypto_inf "XMR,BTC" "GBP"
+interval = 1800
+
+[module/arch_update]
+type = custom/script
+exec = /usr/local/bin/arch-update.py
+interval = 3600
+
+[module/battery]
+type = internal/battery
+full-at = 97
+battery = BAT0
+adapter = AC
+
+format-charging = <label-charging> <animation-charging>
+label-charging = %percentage%%
+label-full = 100% 
+format-discharging = <label-discharging> <animation-discharging>
+label-discharging = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 =  
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 1000
+
+[module/pulseaudio]
+type = internal/pulseaudio
+                   
+format-volume = <label-volume> 
+label-volume = 𝅘𝅥𝅮 %percentage%%
+
+label-muted = Mute
+click-right = exec pavucontrol
+
+[module/network]
+type = internal/network
+interface = wlp59s0
+interval = 10
+format-conneted = <label-connected>
+label-connected = %local_ip%
+
+[module/i3]
+type=internal/i3
+pin-workspaces = true
+wrapping-scroll = false
+label-focused-padding = 5 5
+label-unfocused-padding = 5 5
+label-visible-padding = 5 5
+
+label-focused-background = #20B3AB
+label-visible-background = #157872
