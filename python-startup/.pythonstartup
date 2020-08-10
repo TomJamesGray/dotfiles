@@ -1,2 +1,5 @@
+import readline
 from rich import pretty
+
 pretty.install()
+readline.parse_and_bind("tab: complete")
