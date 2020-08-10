@@ -97,6 +97,7 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 alias wget-d='wget -e robots=off --no-check-certificate --wait 1 -r --no-parent --no-host-directories --cut-dirs=1 --reject "index.html*"'
+export PYTHONSTARTUP=$HOME/.pythonstartup
 
 # If no SSH agent is already running, start one now. Re-use sockets so we never
 # have to start more than one session.

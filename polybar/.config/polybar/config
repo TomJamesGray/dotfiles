@@ -34,7 +34,7 @@ mount-0 = /media/sd_backup
 format-mounted = <label-mounted>
 format-unmounted = <label-unmounted>
 label-mounted = %{F#278261}%{F-}
-label-unmounted = %{B#C62233}%{B-}
+label-unmounted = %{F#C62233}%{F-}
 
 ramp-capacity-0 = ▁
 ramp-capacity-1 = ▂
@@ -84,7 +84,7 @@ ramp-coreload-7 = █
 
 [module/battery]
 type = internal/battery
-full-at = 97
+full-at = 94
 battery = BAT0
 adapter = AC
 
