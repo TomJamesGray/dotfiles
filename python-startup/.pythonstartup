@@ -1,5 +1,13 @@
 import readline
-from rich import pretty
 
-pretty.install()
-readline.parse_and_bind("tab: complete")
+def main():
+    readline.parse_and_bind("tab: complete")
+    try:
+        from rich import pretty
+    except ModuleNotFoundError:
+        return None
+
+    pretty.install()
+
+main()
+
