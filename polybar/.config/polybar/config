@@ -18,6 +18,8 @@ font-5 = FontAwesome5Free:style=Solid:size=10;1
 module-margin = 2 2
 enable-ipc = true
 
+tray-position = right
+
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
