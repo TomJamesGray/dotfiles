@@ -5,6 +5,11 @@ alias gitLines="git ls-files | xargs cat | wc -l"
 alias notesToHtml="find . -type f -name '*.markdown' -exec ghmd --dest {}.html {} \;"
 alias rmHtmlNotesl="find . -type f -name '*.html' -exec rm {} \;"
 alias ccat='highlight -O ansi --force'
+
+#Get confirmation before reboot or shutdown
+alias shutdown="/usr/local/bin/confirm /sbin/shutdown"
+alias reboot="/usr/local/bin/confirm /sbin/reboot"
+
 #Comment line on Alt+Hashtag
 bindkey '\e#' pound-insert
 # Path to your oh-my-zsh installation.
