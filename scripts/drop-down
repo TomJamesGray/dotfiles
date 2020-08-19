@@ -7,8 +7,9 @@ if [ -z "$wid" ]; then
    xdotool windowfocus $wid
 else
     if [ -z "$(xdotool search --onlyvisible --classname urxvtq 2>/dev/null | head -n 1)" ];     then
-        xdotool windowmap $wid
+	xdotool windowmap $wid
         xdotool windowfocus $wid
+        xdotool getwindowfocus windowkill
     else
         xdotool windowunmap $wid
     fi
