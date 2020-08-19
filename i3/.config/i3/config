@@ -245,6 +245,14 @@ for_window [class="Tk"] border normal
 
 for_window [title="ConnectFour"] floating enable
 
+for_window [instance="gotop"] floating enable
+for_window [instance="gotop"] resize set 800 1000
+for_window [instance="gotop"] move position center
+for_window [instance="gotop"] move right 500
+for_window [instance="gotop"] border pixel 5
+
+bindsym Scroll_Lock exec drop-down
+
 bindsym $mod+u border pixel 1
 bindsym $mod+Shift+u border normal
 
