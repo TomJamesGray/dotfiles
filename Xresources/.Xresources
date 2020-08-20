@@ -45,6 +45,4 @@ URxvt.keysym.C-S-Down: perl:font-size:decglobal
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.terminal: urxvt
-rofi.sidebar-mode:true
-rofi.theme:blue_sidebar.rasi
-rofi.location:1
+rofi.theme: material
