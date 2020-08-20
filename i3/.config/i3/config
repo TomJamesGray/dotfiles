@@ -28,6 +28,8 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec "rofi  -show drun"
+bindsym $mod+Shift+d exec "rofi -show window"
+bindsym XF86Search exec "passmenu"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -217,8 +219,8 @@ exec xss-lock /usr/local/bin/lock
 exec_always dunst
 exec thunar
 
-bindsym $mod+Shift+d exec /home/tom/.screenlayout/dp_right.sh
-bindsym $mod+Shift+s exec /home/tom/.screenlayout/laptop.sh
+#bindsym $mod+Shift+d exec /home/tom/.screenlayout/dp_right.sh
+#bindsym $mod+Shift+s exec /home/tom/.screenlayout/laptop.sh
 
 #Configure screens
 exec_always --no-startup-id feh --bg-center --bg-fill .wallpaper.jpg
@@ -293,9 +295,9 @@ workspace_auto_back_and_forth yes
 #smart_gaps on
 #
 # Quiet mode https://github.com/vrde/i3-quiet
-bindsym $mod+q exec /home/tom/.config/i3/quiet-cmd.py
-bindsym $mod+Ctrl+q exec /home/tom/.config/i3/quiet-cmd.py toggle
-exec_always /home/tom/.config/i3/quiet-toggle-bar.py
+#bindsym $mod+q exec /home/tom/.config/i3/quiet-cmd.py
+#bindsym $mod+Ctrl+q exec /home/tom/.config/i3/quiet-cmd.py toggle
+#exec_always /home/tom/.config/i3/quiet-toggle-bar.py
 
 #Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

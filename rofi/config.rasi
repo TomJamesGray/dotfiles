@@ -1,4 +1,0 @@
-configuration {
-	modi: "drun,window";
-	theme: "material";
-}
