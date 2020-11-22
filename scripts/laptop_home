@@ -1,0 +1,18 @@
+#!/bin/bash
+
+xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+
+i3-msg '[workspace="1"]' move workspace to output eDP1
+i3-msg '[workspace="3"]' move workspace to output eDP1
+i3-msg '[workspace="5"]' move workspace to output eDP1
+i3-msg '[workspace="♪"]' move workspace to output eDP1
+
+i3-msg '[workspace="2"]' move workspace to output DP2
+i3-msg '[workspace="4"]' move workspace to output DP2
+i3-msg '[workspace="6"]' move workspace to output DP2
+i3-msg '[workspace="8"]' move workspace to output DP2
+i3-msg '[workspace="Mail"]' move workspace to output DP2
+
+i3-msg restart
+i3-msg workspace 1
+i3-msg workspace 2

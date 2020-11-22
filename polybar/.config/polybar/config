@@ -6,7 +6,7 @@ modules-left = i3
 monitor = ${env:MONITOR}
 bottom = true
 height = 20
-background = #1E1E1E
+background = #282E2B
 foreground = #F4F4F4
 fixed-center = true
 font-0 = Sf Pro Display:pixelsize=10;2
@@ -56,10 +56,6 @@ interval = 5
 type = custom/script
 exec = cur_song_spotify
 
-[module/crypto]
-type = custom/script
-exec = crypto_inf "XMR,BTC" "GBP"
-interval = 1800
 
 [module/arch_update]
 type = custom/script
@@ -150,7 +146,7 @@ label-unfocused-padding = 5
 label-visible-padding = 5
 label-focused-padding = 5
 
-label-focused-background = #20B3AB
-label-visible-background = #157872
+label-focused-background = #84A258
+label-visible-background = #828A73
 label-urgent-background = #CD3599
 

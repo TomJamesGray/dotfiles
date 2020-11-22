@@ -1,5 +1,5 @@
 !URxvt.depth: 32
-URxvt.background: #1E1E1E
+URxvt.background: #282E2B
 
 
 !Shift-Control C or V for copying and pasting
