@@ -1,0 +1,12 @@
+#!/bin/sh
+# Modified from https://github.com/polybar/polybar-scripts/blob/master/polybar-scripts/isrunning-service/isrunning-service.sh
+ 
+UNIT="openvpn-client@fra_vpn.service"
+ 
+if [ "$(systemctl is-active "$UNIT")" = "active" ]; then
+        urxvt -e systemctl stop $UNIT
+else
+        urxvt -e systemctl start $UNIT
+fi
+
+

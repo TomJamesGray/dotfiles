@@ -1,11 +1,11 @@
 [bar/mybar]
-modules-right = crypto cpu network redshift mnt vpn arch_update pulseaudio battery date
+modules-right = cpu crypto network redshift vpn arch_update pulseaudio battery date
 modules-center = cur_song
 modules-left = i3
 
 monitor = ${env:MONITOR}
 bottom = true
-height = 20
+height = 25
 background = #282E2B
 foreground = #F4F4F4
 fixed-center = true
@@ -56,6 +56,10 @@ interval = 5
 type = custom/script
 exec = cur_song_spotify
 
+[module/crypto]
+type = custom/script
+exec = crypto_inf "XMR,BTC" "GBP"
+interval = 1800
 
 [module/arch_update]
 type = custom/script
@@ -120,6 +124,7 @@ animation-discharging-framerate = 1000
 type = custom/script
 exec = ~/dotfiles/scripts/isrunning.sh
 label-font = 6
+click-left = ~/dotfiles/scripts/toggle_service
 interval = 2
 
 [module/pulseaudio]

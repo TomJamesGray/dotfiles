@@ -24,6 +24,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt
+bindsym $mod+Mod1+Return exec urxvt -e python -i -c"from math import *"
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -193,7 +194,7 @@ bindsym $mod+Shift+Ctrl+3 move container to workspace $workspaceEmail
 #}
 
 #Lock
-bindsym Shift+Ctrl+l exec betterlockscreen -l
+bindsym Shift+Ctrl+l exec lock
 #Mute, vol decrease and increase
 bindsym XF86AudioMute exec amixer sset Master 1+ toggle
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
@@ -254,6 +255,7 @@ for_window [instance="gotop"] move right 500
 for_window [instance="gotop"] border pixel 5
 
 bindsym XF86Explorer exec drop-down
+bindsym Shift+XF86Explorer exec laptop_home
 
 bindsym $mod+u border pixel 1
 bindsym $mod+Shift+u border normal
