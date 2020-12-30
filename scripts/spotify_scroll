@@ -1,0 +1,3 @@
+zscroll -b "" -l 50 -u true cur_song_spotify &
+
+wait

@@ -54,7 +54,8 @@ interval = 5
 
 [module/cur_song]
 type = custom/script
-exec = cur_song_spotify
+exec = spotify_scroll
+tail = true
 
 [module/crypto]
 type = custom/script
@@ -125,6 +126,7 @@ type = custom/script
 exec = ~/dotfiles/scripts/isrunning.sh
 label-font = 6
 click-left = ~/dotfiles/scripts/toggle_service
+click-middle = urxvt -e systemctl restart openvpn-client@fra_vpn.service
 interval = 2
 
 [module/pulseaudio]
@@ -135,12 +137,22 @@ label-volume = 𝅘𝅥𝅮 %percentage%%
 
 label-muted = Mute
 
+;[module/network]
+;type = internal/network
+;interface = wlp59s0
+;interval = 10
+;format-conneted = <label-connected>
+;label-connected = %{A1:notify-send %essid%:} %local_ip% %{A}
+
 [module/network]
-type = internal/network
-interface = wlp59s0
-interval = 10
-format-conneted = <label-connected>
-label-connected = %local_ip%
+type = custom/ipc
+
+hook-1 = iw wlp59s0 info | grep -Po '(?<=ssid ).*'
+hook-0 = hostname -i | awk '{print $1}'
+initial = 1
+
+click-left = polybar-msg -p %pid% hook network 2
+click-right = polybar-msg -p %pid% hook network 1
 
 [module/i3]
 type=internal/i3
