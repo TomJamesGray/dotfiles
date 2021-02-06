@@ -240,6 +240,7 @@ for_window [class="feh"] floating enable
 assign [title="cover.jpg$" class="feh"] $workspace10
 for_window [title="cover.jpg$" class="feh"] floating_modifier noh
 assign [class="VirtualBox"] $workspaceVM
+for_window [class="com.gray.App"] floating enable
 #Default to borderless
 for_window [class="^.*"] border pixel 1
 #Tkinter development

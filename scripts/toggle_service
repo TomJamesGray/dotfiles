@@ -4,9 +4,9 @@
 UNIT="openvpn-client@fra_vpn.service"
  
 if [ "$(systemctl is-active "$UNIT")" = "active" ]; then
-        urxvt -e systemctl stop $UNIT
+        sudo /usr/bin/systemctl stop openvpn-client@fra_vpn.service
 else
-        urxvt -e systemctl start $UNIT
+        sudo /usr/bin/systemctl start openvpn-client@fra_vpn.service
 fi
 
 

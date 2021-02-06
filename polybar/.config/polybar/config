@@ -27,7 +27,7 @@ scroll-down = i3wm-wsprev
 type = internal/date
 date = %a %d %b %Y
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt = %H:%M:%S 
 label = %date% %time% 
 
 [module/mnt]
@@ -92,10 +92,10 @@ battery = BAT0
 adapter = AC
 
 format-charging = <label-charging> <animation-charging>
-label-charging = %percentage%%
-label-full = 
+label-charging =  %{A1:bt-headphone-batt :} %percentage%% %{A}
+label-full = %{A1:bt-headphone-batt :}  %{A}
 format-discharging = <label-discharging> <animation-discharging>
-label-discharging = %percentage%%
+label-discharging =  %{A1:bt-headphone-batt :} %percentage%% %{A}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -126,7 +126,7 @@ type = custom/script
 exec = ~/dotfiles/scripts/isrunning.sh
 label-font = 6
 click-left = ~/dotfiles/scripts/toggle_service
-click-middle = urxvt -e systemctl restart openvpn-client@fra_vpn.service
+;click-middle = /usr/bin/systemctl restart openvpn-client@fra_vpn.service
 interval = 2
 
 [module/pulseaudio]
