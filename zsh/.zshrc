@@ -124,6 +124,6 @@ if [ $? = 2 ]; then
 fi
 
 
-
+export XDG_CONFIG_HOME="/home/tom/.config"
 alias ls="exa --icons"
 alias open="xdg-open"

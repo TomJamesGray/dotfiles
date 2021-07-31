@@ -1,0 +1,4 @@
+set recolor-lightcolor "#282E2B"
+set font "Hack 12"
+set recolor-keephue "true"
+set recolor-reverse-video "true"
