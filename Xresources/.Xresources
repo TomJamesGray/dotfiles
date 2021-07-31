@@ -5,7 +5,7 @@ URxvt.background: #282E2B
 !Shift-Control C or V for copying and pasting
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
-URxvt.font: xft:Hack:size=10
+URxvt.font: xft:Hack Nerd Font Mono:size=11
 URxvt.scrollBar: False
 URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:   perl:font-size:decrease

@@ -4,7 +4,8 @@ alias :q="exit"
 alias gitLines="git ls-files | xargs cat | wc -l"
 alias notesToHtml="find . -type f -name '*.markdown' -exec ghmd --dest {}.html {} \;"
 alias rmHtmlNotesl="find . -type f -name '*.html' -exec rm {} \;"
-alias ccat='highlight -O ansi --force'
+alias cat='highlight -O ansi --force'
+alias wcat='/usr/bin/cat'
 
 #Get confirmation before reboot or shutdown
 alias shutdown="/usr/local/bin/confirm /sbin/shutdown"
@@ -19,7 +20,7 @@ ZSH=/usr/share/oh-my-zsh/
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="fwalch"
+ZSH_THEME="jnrowe"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -64,7 +65,8 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git web-search pass)
-
+#ZSH_AUTOSUGGEST_STRATEGY=(completion)
+#source /home/tom/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # User configuration
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
@@ -80,7 +82,7 @@ plugins=(git web-search pass)
 # else
 #   export EDITOR='mvim'
 # fi
-
+export EDITOR='nvim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -120,3 +122,8 @@ if [ $? = 2 ]; then
    echo $SSH_AGENT_PID >| ~/.ssh-agent-pid
    rm /tmp/.ssh-script
 fi
+
+
+
+alias ls="exa --icons"
+alias open="xdg-open"

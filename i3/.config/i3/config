@@ -21,16 +21,20 @@ font pango:SF Pro Display 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
+bindsym Ctrl + F1 workspace prev
+bindsym Ctrl + F2 workspace next
 # start a terminal
 bindsym $mod+Return exec urxvt
 bindsym $mod+Mod1+Return exec urxvt -e python -i -c"from math import *"
+bindsym $mod+Mod1+M exec urxvt -e matlab -nodisplay
+bindsym $mod+Mod1+P exec urxvt -e pwsh
 # kill focused window
 bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec "rofi  -show drun"
 bindsym $mod+Shift+d exec "rofi -show window"
 bindsym XF86Search exec "passmenu"
+bindsym $mod+Mod1+S exec "passmenu"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -139,10 +143,10 @@ set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9" 
-set $workspace10 "10"
-set $workspaceVM "VM"
-set $workspaceMusic "♪"
-set $workspaceEmail "Mail"
+set $workspace10 "10:"
+set $workspaceVM "11: "
+set $workspaceMusic "12: "
+set $workspaceEmail "13: "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -158,6 +162,8 @@ bindsym $mod+0 workspace $workspace10
 bindsym $mod+Ctrl+1 workspace $workspaceVM
 bindsym $mod+Ctrl+2 workspace $workspaceMusic
 bindsym $mod+Ctrl+3 workspace $workspaceEmail
+
+#bindsym Ctrl+mod1+Tab exec notify-send "hi"
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -228,8 +234,7 @@ exec_always --no-startup-id feh --bg-center --bg-fill .wallpaper.jpg
 exec xrdb -merge /home/tom/.Xresources
 exec compton --config /home/tom/.config/compton.conf
 
-assign [class="Steam"] $workspace9
-assign [class="Thunar"] $workspace8
+assign [class="Thunar"] $workspace10
 assign [class="discord"] $workspace7
 assign [class="Thunderbird"] $workspaceEmail
 assign [class="Spotify"] $workspaceMusic
@@ -241,6 +246,7 @@ assign [title="cover.jpg$" class="feh"] $workspace10
 for_window [title="cover.jpg$" class="feh"] floating_modifier noh
 assign [class="VirtualBox"] $workspaceVM
 for_window [class="com.gray.App"] floating enable
+for_window [class="com.gray.frontend.App"] floating enable
 #Default to borderless
 for_window [class="^.*"] border pixel 1
 #Tkinter development
