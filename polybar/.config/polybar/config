@@ -1,15 +1,14 @@
 [bar/mybar]
 modules-right = cpu network redshift vpn arch_update pulseaudio battery date
-modules-center = cur_song
-modules-left = i3
-
+#modules-center = cur_song
+modules-left = i3 cur_song
 monitor = ${env:MONITOR}
 bottom = true
 height = 30
 background = #282E2B
 foreground = #F4F4F4
 fixed-center = true
-font-0 = Sf Pro Display:pixelsize=10;2
+font-0 = Roboto:pixelsize=10;2
 font-1 = FontAwesome5Free:style=Light:size=12;3
 font-2 = FontAwesome5Free:style=Regular:size=12;3
 font-3 = FontAwesome5Brands:style=Regular:size=12;3
@@ -25,12 +24,14 @@ border-color = #84A258
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
+line-size = 3
+
 [module/date]
 type = internal/date
 date = %a %d %b %Y
 time = %H:%M
 time-alt = %H:%M:%S 
-label = %date% %time% 
+label = %date% %time%   
 
 [module/mnt]
 type = internal/fs
@@ -55,9 +56,11 @@ exec = ~/dotfiles/scripts/info-redshift-temp.sh
 interval = 5
 
 [module/cur_song]
+format-underline = #CD108E
 type = custom/script
-exec = spotify_scroll
+exec = cur_song_spotify
 tail = true
+click-left = i3-msg workspace "12: "
 
 [module/crypto]
 type = custom/script
@@ -93,11 +96,11 @@ full-at = 94
 battery = BAT0
 adapter = AC
 
-format-charging = <label-charging> <animation-charging>
-label-charging =  %{A1:bt-headphone-batt :} %percentage%% %{A}
-label-full = %{A1:bt-headphone-batt :}  %{A}
-format-discharging = <label-discharging> <animation-discharging>
-label-discharging =  %{A1:bt-headphone-batt :} %percentage%% %{A}
+format-charging =  <label-charging>
+label-charging =  %percentage%% 
+label-full =  
+format-discharging = <label-discharging>
+label-discharging =   %percentage%% 
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -135,9 +138,9 @@ interval = 2
 type = internal/pulseaudio
                    
 format-volume = <label-volume> 
-label-volume = 𝅘𝅥𝅮 %percentage%%
+label-volume =  %percentage%%
 
-label-muted = Mute
+label-muted = 
 
 ;[module/network]
 ;type = internal/network
@@ -157,6 +160,8 @@ click-left = polybar-msg -p %pid% hook network 2
 click-right = polybar-msg -p %pid% hook network 1
 
 [module/i3]
+label-mode-background = #C62233
+label-mode-padding = 3
 type=internal/i3
 strip-wsnumbers = true
 index-sort = true

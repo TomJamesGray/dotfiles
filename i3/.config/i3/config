@@ -98,7 +98,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+mode "Resize" {
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
@@ -108,7 +108,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "Resize"
 
 #Hide borders
 hide_edge_borders both
@@ -260,6 +260,8 @@ for_window [instance="gotop"] resize set 800 1000
 for_window [instance="gotop"] move position center
 for_window [instance="gotop"] move right 500
 for_window [instance="gotop"] border pixel 5
+
+for_window [class="jetbrains-pycharm" title="win0"] floating enable; bordern none
 
 bindsym XF86Explorer exec drop-down
 bindsym Shift+XF86Explorer exec laptop_home

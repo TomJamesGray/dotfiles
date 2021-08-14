@@ -5,7 +5,8 @@ URxvt.background: #282E2B
 !Shift-Control C or V for copying and pasting
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
-URxvt.font: xft:Hack Nerd Font Mono:size=11
+!URxvt.font: xft:Fira Code:size=11,xft:Hack Nerd Font Mono:size=11
+URxvt.font: xft:FiraCode Nerd Font Mono:size=11:style=Retina
 URxvt.scrollBar: False
 URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:   perl:font-size:decrease
@@ -40,9 +41,3 @@ URxvt.keysym.C-S-Down: perl:font-size:decglobal
 *.foreground: #FFF
 !*.background: #222
 *.cursorColour: #FFF
-
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
-rofi.terminal: urxvt
-rofi.theme: material

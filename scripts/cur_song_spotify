@@ -1,6 +1,15 @@
-album=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/album/{n;p}' | cut -d '"' -f 2 | tail -n 1)
-title=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/title/{n;p}' | cut -d '"' -f 2 | tail -n 1)
+#!/bin/sh
+status=$(playerctl -p spotify status 2> /dev/null)
+artist=$(playerctl -p spotify metadata artist 2> /dev/null)
+title=$(playerctl -p spotify metadata title 2> /dev/null)
 
-printf '%s - %s' "$album" "$title"
-echo ""
+if [ "$status" = "Playing" ]; then
+	printf ' '
+elif [ "$status" = "Paused" ]; then
+	printf ' '
+fi
+
+if [ ! -z "$artist" ] || [ ! -z "$title" ]; then
+	printf ' %s - %s ' "$artist" "$title"
+fi
 

@@ -1,0 +1,56 @@
+/* Modified version of slate theme https://github.com/davatorium/rofi-themes/blob/master/User%20Themes/slate.rasi */
+window {
+  location: south west;
+  anchor: south west;
+  height:50%;
+  width:20%;
+  orientation:horizontal;
+  y-offset:-33px;
+  font: "Roboto 11";
+}
+element-icon{
+  size: 2.5ch;
+}
+* {
+  background-color: #282E2b;
+  border-color: #84A258;
+  text-color: #F4F4F4;
+  spacing: 0;
+  width: 512px;
+}
+
+inputbar {
+  border: 0 0 1px 0;
+  children: [prompt,entry];
+}
+
+prompt {
+  padding: 16px;
+  border: 0 1px 0 0;
+}
+
+textbox {
+  background-color: #2e343f;
+  border: 0 0 1px 0;
+  border-color: #282C33;
+  padding: 8px 16px;
+}
+
+entry {
+  padding: 16px;
+}
+
+listview {
+  cycle: false;
+  margin: 0 0 -1px 0;
+  scrollbar: false;
+}
+
+element {
+  border: 0 0 1px 0;
+  padding: 16px;
+}
+
+element selected {
+  background-color: #CD108E;
+}
