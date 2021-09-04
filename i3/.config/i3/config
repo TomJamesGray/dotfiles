@@ -33,6 +33,7 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec "rofi  -show drun"
 bindsym $mod+Shift+d exec "rofi -show window"
+bindsym $mod+Mod1+d exec "rofi -show 'Warp Dir' -modi 'Warp Dir:rofi-wd.sh'"
 bindsym XF86Search exec "passmenu"
 bindsym $mod+Mod1+S exec "passmenu"
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -237,7 +238,7 @@ exec compton --config /home/tom/.config/compton.conf
 assign [class="Thunar"] $workspace10
 assign [class="discord"] $workspace7
 assign [class="Thunderbird"] $workspaceEmail
-assign [class="Spotify"] $workspaceMusic
+for_window [class="Spotify"] move to workspace $workspaceMusic
 
 for_window [class="Lxappearance"] floating enable
 for_window [title="Terminator Preferences"] floating enable
@@ -280,7 +281,7 @@ bindsym $mod+Shift+u border normal
 #Pull down terminal
 #exec_always urxvt -name pullDown
 exec --no-startup-id spotify
-assign [class="spotify"] $workspaceMusic
+#assign [class="Spotify"] $workspaceMusic
 
 bindsym $mod+mod1+minus move scratchpad
 bindsym $mod+mod1+plus scratchpad show

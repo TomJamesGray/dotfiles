@@ -1,5 +1,5 @@
 configuration {
-	modi: "drun,run,ssh";
+	modi: "drun,run,ssh,Warp Dir:rofi-wd.sh";
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/

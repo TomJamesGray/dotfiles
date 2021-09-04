@@ -1,6 +1,7 @@
 [bar/mybar]
 modules-right = cpu network redshift vpn arch_update pulseaudio battery date
 #modules-center = cur_song
+modules-center = title
 modules-left = i3 cur_song
 monitor = ${env:MONITOR}
 bottom = true
@@ -175,4 +176,9 @@ label-focused-padding = 5
 label-focused-background = #84A258
 label-visible-background = #828A73
 label-urgent-background = #CD3599
+
+[module/title]
+type=internal/xwindow
+format = <label>
+label = %title%
 

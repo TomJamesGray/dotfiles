@@ -64,7 +64,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git web-search pass)
+plugins=(git web-search pass wd)
 #ZSH_AUTOSUGGEST_STRATEGY=(completion)
 #source /home/tom/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # User configuration

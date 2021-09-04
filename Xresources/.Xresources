@@ -6,13 +6,10 @@ URxvt.background: #282E2B
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 !URxvt.font: xft:Fira Code:size=11,xft:Hack Nerd Font Mono:size=11
-URxvt.font: xft:FiraCode Nerd Font Mono:size=11:style=Retina
+URxvt.font: xft:FiraCode Nerd Font Mono:size=11
 URxvt.scrollBar: False
-URxvt.keysym.C-Up:     perl:font-size:increase
-URxvt.keysym.C-Down:   perl:font-size:decrease
-URxvt.keysym.C-S-Up:   perl:font-size:incglobal
-URxvt.keysym.C-S-Down: perl:font-size:decglobal
-
+URxvt.perl-ext-common:resize-font
+URxvt.resize-font.step: 1
 ! black
 *color0:  #4d4d4d
 *color8:  #5a5a5a

@@ -3,10 +3,11 @@ window {
   location: south west;
   anchor: south west;
   height:50%;
-  width:20%;
+  width:25%;
   orientation:horizontal;
   y-offset:-33px;
   font: "Roboto 11";
+  border:2;
 }
 element-icon{
   size: 2.5ch;
