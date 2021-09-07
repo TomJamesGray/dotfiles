@@ -58,13 +58,13 @@ DISABLE_AUTO_UPDATE="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=/home/tom/.config/zsh/custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git web-search pass wd)
+plugins=(git pass wd sudo auto-notify colored-man-pages)
 #ZSH_AUTOSUGGEST_STRATEGY=(completion)
 #source /home/tom/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # User configuration
@@ -83,6 +83,8 @@ plugins=(git web-search pass wd)
 #   export EDITOR='mvim'
 # fi
 export EDITOR='nvim'
+export AUTO_NOTIFY_WHITELIST=("pacman")
+export AUTO_NOTIFY_THRESHOLD=10
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

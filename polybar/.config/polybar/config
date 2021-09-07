@@ -59,7 +59,8 @@ interval = 5
 [module/cur_song]
 format-underline = #CD108E
 type = custom/script
-exec = cur_song_spotify
+#exec = cur_song_spotify
+exec = spotify_scroll
 tail = true
 click-left = i3-msg workspace "12: "
 

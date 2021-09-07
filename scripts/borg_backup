@@ -1,0 +1,44 @@
+#!/bin/zsh
+
+export DISPLAY=0.0
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+export XAUTHORITY=/home/tom/.Xauthority
+
+
+export BORG_PASSPHRASE="PASSWORD"
+export BORG_REPO="/path/to/repo"
+
+
+if [ -d "$BORG_REPO" ]; then
+	notify-send "Backup" "Micro SD backup started at $(date '+%H:%M')"
+	borg create \
+	  -s \
+	  --progress \
+	  ::'{hostname}-{now}' \
+	  /home/tom/Documents/ \
+	  /home/tom/Darkroom/ \
+	  /home/tom/.password-store \
+	  /home/tom/.gnupg \
+	  /home/tom/.ssh \
+	  /home/tom/.config \
+	  /home/tom/Monero/ 
+	notify-send "Backup" "Micro SD backup finished at $(date '+%H:%M')"
+	borg prune                          \
+	    --stats			    \
+	    --list                          \
+	    --prefix '{hostname}-'          \
+	    --show-rc                       \
+	    --keep-hourly   3		    \
+	    --keep-daily    7               \
+	    --keep-weekly   4               \
+	    --keep-monthly  6 &> /tmp/borg_prune_out 
+	dedup_char_pos=$(grep "Deduplicated size" /tmp/borg_prune_out | awk 'END{print index($0,"D")}')
+	deleted_data_str=$(grep "Deleted data:" /tmp/borg_prune_out)
+	deleted_data_val=$(echo ${deleted_data_str:$dedup_char_pos} | xargs)
+	archives_pruned=$(grep -c "Pruning archive" /tmp/borg_prune_out)
+	notify-send "Backup" "Prune finished. Pruned $archives_pruned, saving $deleted_data_val"
+
+else
+	notify-send "Backup" "Borg repo $BORG_REPO doesn't exist"
+fi
+
